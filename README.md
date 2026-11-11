@@ -127,38 +127,6 @@ See the [yt-dlp option reference](https://github.com/yt-dlp/yt-dlp#usage-and-opt
 </details>
 
 <details>
-<summary><h2>MeTube configuration</h2></summary>
-
-Mount the plugin package into the container at the Linux path shown above. Keep the file on persistent host storage so container replacement does not remove it.
-
-Merge these settings into your existing `YTDL_OPTIONS` JSON:
-
-```json
-{
-  "writeautomaticsub": true,
-  "subtitleslangs": ["en.*"],
-  "subtitlesformat": "vtt",
-  "postprocessors": [
-    {
-      "key": "CleanAutoSubs",
-      "when": "before_dl"
-    },
-    {
-      "key": "FFmpegEmbedSubtitle"
-    }
-  ]
-}
-```
-
-Preserve other settings and postprocessors you already use. Choose a subtitle-capable output container, such as MKV, when embedding. Omit the `FFmpegEmbedSubtitle` entry if you only want separate subtitle files.
-
-Restart the container after installing or replacing the plugin. Run one download and check the container log for the CleanAutoSubs summary.
-
-MeTube passes API-style options through `YTDL_OPTIONS`; see its [configuration reference](https://github.com/alexta69/metube#yt-dlp-options). Container paths and existing postprocessor settings depend on your installation.
-
-</details>
-
-<details>
 <summary><h2>How cleanup works</h2></summary>
 
 | Stage | Action |

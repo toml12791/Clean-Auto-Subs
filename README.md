@@ -59,17 +59,16 @@ The plugin name used in configuration is `CleanAutoSubs`, without the `PP` suffi
         └── cleanautosubs/
             └── yt_dlp_plugins/
                 └── postprocessor/
-                    └── clean_autosubs.py
+                    └── Clean-Auto-Subs.py
 ```
 
-2. Confirm yt-dlp and FFmpeg work in the same environment.
-4. Run this command, replacing `VIDEO_URL` with a YouTube video URL:
+2. Run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
 
 ```sh
-yt-dlp --write-auto-subs --sub-langs "en.*" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
+yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
 ```
 
-This downloads the video and requests English automatic captions in WebVTT format. The plugin converts the selected subtitles to SRT and cleans supported tracks.
+This downloads the video and requests English automatic captions in WebVTT format. The plugin converts and cleans the selected subtitles track(s) to SRT.
 
 The example uses `before_dl` so cleanup runs after subtitle files are written and before video downloading and later embedding. This ordering follows [yt-dlp's download pipeline](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py).
 
@@ -79,13 +78,6 @@ Check the output for a `CleanAutoSubs` version summary and a `Timing source:` li
 <summary><h2>Plugin installation</h2></summary>
 
 Place `clean_autosubs.py` inside this package structure:
-
-```text
-cleanautosubs/
-└── yt_dlp_plugins/
-    └── postprocessor/
-        └── clean_autosubs.py
-```
 
 Example Windows location:
 

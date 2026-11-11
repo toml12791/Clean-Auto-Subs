@@ -1,19 +1,8 @@
-```text
-       ___________________________________
-      |                                   |
-      |          CLEAN AUTO SUBS          |
-      |                                   |
-      |     Cleaner captions.             |
-      |          Better line breaks.      |
-      |___________________________________|
-                       [ CC ]
-```
-
 # CleanAutoSubs
 
 **Version 3.2.0-beta.9 — Public beta**
 
-A yt-dlp postprocessor that cleans up English YouTube automatic captions, removes rolling repetition, rebuilds subtitle cues, and improves line breaks while using source WebVTT timing where available.
+A yt-dlp postprocessor that cleans up English YouTube automatic captions, removes rolling repetition, rebuilds subtitle cues, and improves line breaks using source WebVTT timing where available.
 
 > CleanAutoSubs works with captions YouTube has already generated. It does not transcribe audio, translate dialogue, or correct recognition mistakes.
 
@@ -28,7 +17,6 @@ A yt-dlp postprocessor that cleans up English YouTube automatic captions, remove
 - Preserves spoken-word censorship placeholders such as `[ __ ]`
 - Converts YouTube `>>` speaker markers into readable dash dialogue
 - Reports timing, cleanup, and readability results
-- Works as part of a yt-dlp or MeTube download workflow
 - Requires no external language model or NLP service
 
 ## Processing model
@@ -44,11 +32,10 @@ A yt-dlp postprocessor that cleans up English YouTube automatic captions, remove
 
 ## Requirements
 
-- A working yt-dlp installation with plugin support
+- A working yt-dlp installation
 - FFmpeg available to yt-dlp for subtitle conversion and optional embedding
 - English automatic captions available for the selected video
 - Write access to the subtitle output directory
-- For MeTube: access to the container's plugin files and download options
 
 Use a Python version supported by your installed yt-dlp release when running yt-dlp through Python. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
@@ -56,7 +43,7 @@ Use a Python version supported by your installed yt-dlp release when running yt-
 
 | File | Purpose |
 |---|---|
-| `clean_autosubs.py` | Plugin implementation; provides `CleanAutoSubsPP` |
+| `Clean-Auto-Subs.py` | Plugin implementation; provides `CleanAutoSubsPP` |
 | `README.md` | Setup, usage, and reference documentation |
 
 The plugin name used in configuration is `CleanAutoSubs`, without the `PP` suffix.

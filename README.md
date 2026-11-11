@@ -50,18 +50,19 @@ The plugin name used in configuration is `CleanAutoSubs`, without the `PP` suffi
 
 ## Quick start
 
-1. Install the plugin using the folder layout below.
-
-Place `clean_autosubs.py` inside this package structure:
+1. Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
 
 ```text
-cleanautosubs/
-└── yt_dlp_plugins/
-    └── postprocessor/
-        └── clean_autosubs.py
+%APPDATA%/
+└── yt-dlp/
+    └── plugins/
+        └── cleanautosubs/
+            └── yt_dlp_plugins/
+                └── postprocessor/
+                    └── clean_autosubs.py
 ```
 
-3. Confirm yt-dlp and FFmpeg work in the same environment.
+2. Confirm yt-dlp and FFmpeg work in the same environment.
 4. Run this command, replacing `VIDEO_URL` with a YouTube video URL:
 
 ```sh

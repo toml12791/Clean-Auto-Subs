@@ -175,7 +175,7 @@ These values are constants near the beginning of `Clean-Auto-Subs.py`. The plugi
 
 Readability values are processing targets, not a guarantee that every final cue meets them. Source timing and available gaps can limit the result.
 
-# Subtitle readability defaults are based on public subtitling guidance from WCAG and Samtext, as well as subtitling standards set by Netflix and the BBC.
+### Subtitle readability defaults are based on public subtitling guidance from WCAG and Samtext, as well as subtitling standards set by Netflix and the BBC.
 
 </details>
 

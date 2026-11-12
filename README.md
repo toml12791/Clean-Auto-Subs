@@ -26,15 +26,6 @@ A yt-dlp plugin that cleans up YouTube's English auto-generated captions by remo
 
 If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
-## Project files
-
-| File | Purpose |
-|---|---|
-| `Clean-Auto-Subs.py` | Plugin implementation; provides `CleanAutoSubsPP` |
-| `README.md` | Setup, usage, and reference documentation |
-
-The plugin name used in configuration is `CleanAutoSubs`, without the `PP` suffix.
-
 ## Quick start
 
 1. Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...

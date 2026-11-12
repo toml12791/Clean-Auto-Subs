@@ -104,31 +104,11 @@ Below is an example configuration that downloads a video, cleans and embeds Engl
 
 * **Optional extras:** `--convert-thumbnails jpg`, `--embed-thumbnail`, `--embed-metadata`, and `--embed-chapters` convert cover art to JPG and bundle the thumbnail, video info, and chapter markers inside the MKV.
 
-
 ---
 
-### Command-line usage
-
-#### Download and embed cleaned subtitles
-
-```sh
-yt-dlp --write-auto-subs --sub-langs "en.*" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" --embed-subs -t mkv "VIDEO_URL"
-```
-
-This requests an MKV output with embedded subtitles. Review the selected subtitle track in your player.
-
-#### Download only the subtitles
-
-```sh
-yt-dlp --skip-download --write-auto-subs --sub-langs "en.*" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
-```
-
----
-
-### Subtitle selection tips
+### Subtitle selection tip
 
 * **Prefer creator subtitles when available:** Add `--write-subs` alongside `--write-auto-subs`. When a video has creator-authored subtitles for your requested language, `yt-dlp` selects those instead and `CleanAutoSubs` leaves them untouched.
-* **Select a specific English track:** Use `yt-dlp --list-subs "VIDEO_URL"` to inspect available language codes, then replace `en.*` or `en-orig` with your preferred code (for example, `en`, `en-US`, or `en-GB`). Broad patterns like `en.*` can match multiple English variants or auto-translated tracks.
 
 See the [yt-dlp option reference](https://github.com) for additional configuration and subtitle options.
 

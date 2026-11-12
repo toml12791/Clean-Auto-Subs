@@ -1,10 +1,10 @@
-# CleanAutoSubs
+# Clean-Auto-Subs
 
 **Version 1.0.0 — Public beta**
 
-A yt-dlp postprocessor that cleans up English YouTube automatic captions, removes rolling repetition, rebuilds subtitle cues, and improves line breaks using source WebVTT timing where available.
+A yt-dlp plugin that cleans up YouTube's English auto-generated captions by removing rolling repetition, rebuilding subtitle cues, and improving line breaks using source timing.
 
-> CleanAutoSubs works with captions YouTube has already generated. It does not transcribe audio, translate dialogue, or correct recognition mistakes.
+> Clean-Auto-Subs works with captions YouTube has already generated. It does not transcribe audio, translate dialogue, or correct recognition mistakes.
 
 ## Highlights
 
@@ -16,19 +16,8 @@ A yt-dlp postprocessor that cleans up English YouTube automatic captions, remove
 - Removes descriptive bracketed annotations such as `[Music]`
 - Preserves spoken-word censorship placeholders such as `[ __ ]`
 - Converts YouTube `>>` speaker markers into readable dash dialogue
-- Reports timing, cleanup, and readability results
+- Reports timing, cleanup, and readability results in the terminal/log
 - Requires no external language model, NLP service, or python dependencies
-
-## Processing model
-
-- Linguistic cleanup applies only to selected English automatic-caption tracks.
-- Creator-authored and non-English tracks are skipped by the cleaner, but may still be converted to SRT by the shared conversion step.
-- Source timing takes priority when forcing a readability target would distort timing.
-- If captured WebVTT timing is unavailable or fails the sanity check, processing falls back to timing derived from the converted SRT.
-- The completed SRT is written to a temporary file before replacing the working subtitle file.
-- Final structural checks report warnings; they do not block writing the output.
-
-> The working SRT is replaced during cleanup. CleanAutoSubs does not create a separate backup of it, and yt-dlp controls whether intermediate subtitle files are retained.
 
 ## Requirements
 
@@ -66,9 +55,9 @@ The plugin name used in configuration is `CleanAutoSubs`, without the `PP` suffi
 yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
 ```
 
-This downloads the video, with English automatic captions in WebVTT format. The plugin converts and cleans the selected subtitles track(s) to SRT.
+This downloads the video, with English automatic captions in WebVTT format. This plugin converts and cleans the selected subtitles track(s) to SRT.
 
-Check the output for a `CleanAutoSubs` version summary and a `Timing source:` line. Play the result and review the captions before processing a larger batch.
+Check the terminal output for a `CleanAutoSubs` version summary and a `Timing source:` line. Play the result and review the captions before processing a larger batch.
 
 Running `python clean_autosubs.py` does not process a subtitle file. This module is loaded and called by yt-dlp.
 

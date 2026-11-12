@@ -35,7 +35,7 @@ A yt-dlp postprocessor that cleans up English YouTube automatic captions, remove
 - yt-dlp & FFmpeg installed
 - English automatic captions available for the selected video
 
-Use a Python version supported by your installed yt-dlp release when running yt-dlp through Python. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
+If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
 ## Project files
 

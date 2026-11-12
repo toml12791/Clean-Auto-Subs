@@ -63,7 +63,7 @@ Instead of typing long commands every time, you can save default options in a `c
 Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 
 #### Example configuration
-
+---
 Below is an example configuration that downloads a video, cleans and embeds English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults:
 
 ```ini

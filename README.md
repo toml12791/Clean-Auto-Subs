@@ -55,31 +55,78 @@ Running `python Clean-Auto-Subs.py` does not process a subtitle file. This modul
 <details>
 <summary><h2>Usage options</h2></summary>
 
-### Download and embed cleaned subtitles
+### Using a `yt-dlp` configuration file (Recommended)
+
+Instead of typing long commands every time, you can save default options in a `config.txt` file inside your `yt-dlp` configuration folder—right next to your `plugins` directory:
+
+* **Windows:** `%APPDATA%\yt-dlp\config.txt`
+* **macOS / Linux:** `~/.config/yt-dlp/config`
+
+Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
+
+#### Example configuration
+
+Below is a simplified configuration that downloads an MKV file, cleans and embeds English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults:
+
+```ini
+# Temporary location & destination for finished file (adjust path for your system)
+-P "temp:."
+-P "home:D:/YouTube"
+
+# File naming, Format, & Container preferences
+-o "%(channel)s/%(fulltitle)s.%(ext)s"
+-S "res:1080,vcodec:avc,acodec:m4a,proto,vbr,abr"
+-t mkv
+
+# Clean and embed English automatic captions
+--write-auto-subs
+--sub-langs "en-orig"
+--sub-format "vtt"
+--use-postprocessor "CleanAutoSubs:when=before_dl"
+--embed-subs
+--ppa 'EmbedSubtitle+ffmpeg_o:-metadata:s:s:0 title="Cleaned Auto Captions"'
+
+# Optional: embed video metadata, chapters, and thumbnail
+--convert-thumbnails jpg
+--embed-thumbnail
+--embed-metadata
+--embed-chapters
+```
+
+* **Subtitle cleanup & embedding (`--write-auto-subs` through `--ppa`):** Requests English automatic captions in WebVTT format, runs `CleanAutoSubs` before download/embedding, embeds the resulting SRT track into the MKV, and names the subtitle stream `"Cleaned Auto Captions"` in your media player.
+* **Container & format sorting (`-t mkv`, `-S`):** Outputs an MKV container and prefers up to 1080p H.264 (`avc`) video with M4A audio for broad device compatibility.
+* **Paths & filenames (`-P`, `-o`):** Organizes downloads into channel folders with the upload date and video ID in the filename. *(Update `D:/YouTube` to a valid folder on your machine, or remove `-P` to save to your current directory.)*
+* **Optional extras:** `--no-playlist` prevents downloading an entire playlist if a video URL includes a list parameter, while `--embed-metadata`, `--embed-chapters`, and `--embed-thumbnail` bundle info and cover art inside the MKV.
+
+---
+
+### Command-line usage
+
+#### Download and embed cleaned subtitles
 
 ```sh
-yt-dlp --write-auto-subs --sub-langs "en.*" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" --embed-subs --merge-output-format mkv --remux-video mkv "VIDEO_URL"
+yt-dlp --write-auto-subs --sub-langs "en.*" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" --embed-subs -t mkv "VIDEO_URL"
 ```
 
 This requests an MKV output with embedded subtitles. Review the selected subtitle track in your player.
 
-### Download only the subtitles
+#### Download only the subtitles
 
 ```sh
 yt-dlp --skip-download --write-auto-subs --sub-langs "en.*" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
 ```
 
-### Prefer creator subtitles when available
+---
 
-Add `--write-subs` alongside `--write-auto-subs`. For a selected language with creator subtitles, yt-dlp can select those instead. CleanAutoSubs skips their linguistic cleanup.
+### Subtitle selection tips
 
-### Select a specific English track
+* **Prefer creator subtitles when available:** Add `--write-subs` alongside `--write-auto-subs`. When a video has creator-authored subtitles for your requested language, `yt-dlp` selects those instead and `CleanAutoSubs` leaves them untouched.
+* **Select a specific English track:** Use `yt-dlp --list-subs "VIDEO_URL"` to inspect available language codes, then replace `en.*` or `en-orig` with your preferred code (for example, `en`, `en-US`, or `en-GB`). Broad patterns like `en.*` can match multiple English variants or auto-translated tracks.
 
-Use `--list-subs "VIDEO_URL"` to inspect available language codes, then replace `en.*` with the desired English code. The broader expression can select multiple English variants or translated tracks.
-
-See the [yt-dlp option reference](https://github.com/yt-dlp/yt-dlp#usage-and-options) for subtitle selection and embedding options.
+See the [yt-dlp option reference](https://github.com) for additional configuration and subtitle options.
 
 </details>
+
 
 <details>
 <summary><h2>How cleanup works</h2></summary>

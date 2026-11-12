@@ -66,15 +66,19 @@ Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 
 #### Example configuration
 
-Below is a simplified configuration that downloads an MKV file, cleans and embeds English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults:
+Below is an example configuration that downloads a video, cleans and embeds English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults:
 
 ```ini
+# Creates an ongoing list of downloaded videos, prevents re-downloading
+--download-archive "D:/YouTube/download-archive.txt"
+
 # Temporary location & destination for finished file (adjust path for your system)
 -P "temp:."
 -P "home:D:/YouTube"
 
 # File naming, Format, & Container preferences
 -o "%(channel)s/%(fulltitle)s.%(ext)s"
+-f "bv*+ba[language^=en]/bv*+ba/b"
 -S "res:1080,vcodec:avc,acodec:m4a,proto,vbr,abr"
 -t mkv
 
@@ -86,7 +90,7 @@ Below is a simplified configuration that downloads an MKV file, cleans and embed
 --embed-subs
 --ppa 'EmbedSubtitle+ffmpeg_o:-metadata:s:s:0 title="Cleaned Auto Captions"'
 
-# Optional: embed video metadata, chapters, and thumbnail
+# Optional Defaults: embed video metadata, chapters, and thumbnail
 --convert-thumbnails jpg
 --embed-thumbnail
 --embed-metadata

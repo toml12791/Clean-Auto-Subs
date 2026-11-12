@@ -55,8 +55,6 @@ Running `python Clean-Auto-Subs.py` does not process a subtitle file. This modul
 <details>
 <summary><h2>Usage options</h2></summary>
 
-### Using a `yt-dlp` configuration file (Recommended)
-
 Instead of typing long commands every time, you can save default options in a `config.txt` file inside your `yt-dlp` configuration folder—right next to your `plugins` directory:
 
 * **Windows:** `%APPDATA%\yt-dlp\config.txt`

@@ -59,7 +59,7 @@ This downloads the video, with English automatic captions in WebVTT format. This
 
 Check the terminal output for a `CleanAutoSubs` version summary and a `Timing source:` line. Play the result and review the captions before processing a larger batch.
 
-Running `python clean_autosubs.py` does not process a subtitle file. This module is loaded and called by yt-dlp.
+Running `python Clean-Auto-Subs.py` does not process a subtitle file. This module is loaded and called by yt-dlp.
 
 <details>
 <summary><h2>Usage options</h2></summary>
@@ -146,7 +146,7 @@ The detection uses bracket structure and alphabetic content, not a fixed diction
 
 CPS means characters per second. WPM means words per minute.
 
-These values are constants near the beginning of `clean_autosubs.py`. The plugin does not provide a separate configuration file or custom command-line settings for them.
+These values are constants near the beginning of `Clean-Auto-Subs.py`. The plugin does not provide a separate configuration file or custom command-line settings for them.
 
 Readability values are processing targets, not a guarantee that every final cue meets them. Source timing and available gaps can limit the result.
 

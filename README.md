@@ -93,16 +93,6 @@ Below is an example configuration that downloads a video, cleans and embeds Engl
 --embed-metadata
 --embed-chapters
 ```
-
-* **Download archive (`--download-archive`):** Logs downloaded video IDs to `download-archive.txt` to prevent re-downloading. *(Pass `--no-download-archive` if testing the same video multiple times.)*
-* **Paths & filenames (`-P`, `-o`):** Stages temporary files in the current directory (`temp:.`) and organizes finished downloads into channel folders (`%(channel)s/%(fulltitle)s.%(ext)s`) inside `D:/YouTube`. *(Update `D:/YouTube` to a valid folder on your machine, or remove `-P` to save to your current directory.)*
-* **Format, language & container sorting (`-f`, `-S`, `-t mkv`):** Prefers English audio (`language^=en`), sorts streams up to 1080p H.264 (`avc`) video with M4A audio for broad device compatibility, and outputs an MKV container.
-* **Subtitle cleanup & embedding (`--write-auto-subs` through `--ppa`):** Requests original English automatic captions (`en-orig`) in WebVTT format, runs `CleanAutoSubs` before download/embedding, embeds the resulting SRT track into the MKV, and names the subtitle stream `"Cleaned Auto Captions"` in your media player.
-
-
-
-* **Optional extras:** `--convert-thumbnails jpg`, `--embed-thumbnail`, `--embed-metadata`, and `--embed-chapters` convert cover art to JPG and bundle the thumbnail, video info, and chapter markers inside the MKV.
-
 ---
 
 ### Subtitle selection tip

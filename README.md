@@ -62,25 +62,24 @@ Instead of typing long commands every time, you can save default options in a `c
 
 Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 
-#### Example configuration
 ---
-Below is an example configuration that downloads a video, cleans and embeds English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults:
+Below is an example configuration that downloads a video, cleans and embeds English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults. [change paths for local filesystem]
 
 ```ini
 # Creates an ongoing list of downloaded videos, prevents re-downloading
 --download-archive "D:/YouTube/download-archive.txt"
 
-# Temporary location & destination for finished file (adjust path for your system)
+# Temporary location, destination & file naming preferences
 -P "temp:."
 -P "home:D:/YouTube"
-
-# File naming, Format, & Container preferences
 -o "%(channel)s/%(fulltitle)s.%(ext)s"
+
+# Language, format & container preferences
 -f "bv*+ba[language^=en]/bv*+ba/b"
 -S "res:1080,vcodec:avc,acodec:m4a,proto,vbr,abr"
 -t mkv
 
-# Clean and embed English automatic captions
+# Clean & embed English automatic captions
 --write-auto-subs
 --sub-langs "en-orig"
 --sub-format "vtt"

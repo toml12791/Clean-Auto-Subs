@@ -132,6 +132,18 @@ See the [yt-dlp option reference](https://github.com) for additional configurati
 | 10 | Rewrap lines and render speaker markers as dashes |
 | 11 | Write the cleaned SRT and report structural and readability metrics |
 
+### How cue boundaries are scored
+
+Inside each continuous speech region, Clean-Auto-Subs uses a dynamic-programming search to evaluate possible subtitle splits and choose the lowest-cost sequence of cues. Every candidate cue starts with a small base cost to discourage rapid-fire fragments, then accumulates penalties or bonuses based on readability and English grammar:
+
+* **Sentence & clause boundaries (strongest bonuses):** Ending a cue at sentence punctuation (`.`, `!`, `?`) provides the largest bonus, while commas, semicolons, and colons provide a moderate bonus. Leaving a completed sentence buried in the middle of a cue carries a heavy penalty.
+* **Stranded grammar & fixed phrases (heavy penalties):** Splitting right after determiners (`the`, `a`), subject pronouns (`I`, `they`), auxiliaries (`is`, `have`), prepositions, possessives (`'s`), title abbreviations (`Dr.`, `Mr.`), or inside common multi-word phrases (`going to`, `a lot of`, `in order to`) is heavily penalized.
+* **Early-cue punctuation protection:** Starting a new cue mid-thought when a comma or clause break appears within the first 3 words incurs a penalty so those trailing words stay attached to the previous cue.
+* **Reading speed & duration:** Cues faster than the target reading speed (`15 CPS`), shorter than `1,000 ms`, longer than `7,000 ms`, or consisting of tiny 1–2 word orphans receive escalating penalties.
+* **Line-break symmetry:** When wrapping a cue onto two lines, the scorer balances line lengths while applying similar grammar penalties so function words are not stranded at the end of line 1.
+* **Local VTT cadence tie-breaker:** After optimal boundaries are chosen, unpunctuated splits can shift by up to 3 words if nearby inline WebVTT timestamps show a clear local speech pause—provided the new split does not violate any grammar or readability rule.
+
+
 ### Timing preservation
 
 Inline VTT timestamps provide anchors within source cues. Words between anchors still need estimated timing, and the final spoken word or chunk may need a bounded tail estimate. Timing preservation does not mean every output timestamp is copied unchanged from YouTube.

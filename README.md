@@ -15,8 +15,6 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 ## Highlights
 
-## Highlights
-
 - **Readable structure:** Strips karaoke roll-up repetition and rebuilds cues using English grammar heuristics.
 - **Accurate timing:** Captures inline WebVTT word timestamps before SRT conversion to preserve natural pacing.
 - **Clean dialogue:** Removes `[Music]` clutter, keeps `[ __ ]` censorship markers, and formats `>>` turns as dashes.

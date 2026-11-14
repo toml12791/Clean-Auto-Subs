@@ -15,16 +15,12 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 ## Highlights
 
-- Removes repeated text from rolling automatic captions
-- Rebuilds cues around sentences, phrases, and speech regions
-- Uses English grammar heuristics to improve cue and line breaks
-- Captures inline WebVTT timestamps before converting subtitles to SRT
-- Uses local source timing to refine suitable cue boundaries
-- Removes descriptive bracketed annotations such as `[Music]`
-- Preserves spoken-word censorship placeholders such as `[ __ ]`
-- Converts YouTube `>>` speaker markers into readable dash dialogue
-- Reports timing, cleanup, and readability results in the terminal/log
-- Requires no external language model, NLP service, or python dependencies
+## Highlights
+
+- **Readable structure:** Strips karaoke roll-up repetition and rebuilds cues using English grammar heuristics.
+- **Accurate timing:** Captures inline WebVTT word timestamps before SRT conversion to preserve natural pacing.
+- **Clean dialogue:** Removes `[Music]` clutter, keeps `[ __ ]` censorship markers, and formats `>>` turns as dashes.
+- **Zero bloat:** Pure Python + FFmpeg—no Whisper, LLMs, or extra dependencies.
 
 ## Requirements
 

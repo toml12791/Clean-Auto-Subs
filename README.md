@@ -64,8 +64,13 @@ Running `python Clean-Auto-Subs.py` does not process a subtitle file. This modul
 
 Instead of typing long commands every time, you can save default options in a `config.txt` file inside your `yt-dlp` configuration folder—right next to your `plugins` directory:
 
-* **Windows:** `%APPDATA%\yt-dlp\config.txt`
-* **macOS / Linux:** `~/.config/yt-dlp/config`
+* **Windows:**
+  
+```text
+%APPDATA%/
+└── yt-dlp/
+    └── config.txt
+```
 
 Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 

@@ -40,7 +40,7 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
 ```
 
-### PowerShell Install (Windows)
+## PowerShell Install (Windows)
 
 Run this single command in PowerShell to install or update the plugin (any existing `config.txt` is automatically backed up to `config.bak.txt`):
 

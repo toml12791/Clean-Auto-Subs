@@ -34,6 +34,12 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 3. Paste & Extract the contents of `Clean-Auto-Subs.zip` directly into that `yt-dlp` folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
 4. Open `config.txt` and update the `D:/YouTube` paths to match your preferred download location.
 
+5. Once extracted, run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
+
+```sh
+yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
+```
+
 <details>
 <summary><h2>Manual Installation</h2></summary>
 

@@ -9,7 +9,7 @@ from yt_dlp.postprocessor.common import PostProcessor
 
 # CleanAutoSubs public beta: deterministic cleanup and re-segmentation of
 # YouTube automatic captions with source WebVTT timing preservation.
-PLUGIN_VERSION = "3.2.0-beta.9"
+PLUGIN_VERSION = "1.0.0"
 TIMING_LAYER_VERSION = "VTT1.6"
 
 # ---------------------------------------------------------------------------
@@ -106,7 +106,7 @@ _TITLE_ABBREVIATIONS = {
 }
 
 # Heuristic phrase-boundary vocabulary. This is intentionally lightweight:
-# no external NLP model is required inside the MeTube container.
+# no external NLP model is required.
 _CONJUNCTIONS = {
     'and', 'but', 'or', 'so', 'yet', 'nor', 'for',
     'because', 'although', 'though', 'while', 'whereas',

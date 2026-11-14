@@ -1,0 +1,30 @@
+# Temporary location, destination & file naming preferences
+# (Replace "D:/YouTube" with your preferred download folder)
+-P "temp:."
+-P "home:D:/YouTube"
+-o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"
+
+# Creates an ongoing list of downloaded videos, prevents re-downloading
+--download-archive "D:/YouTube/download-archive.txt"
+
+# Language, format & container preferences
+-f "bv*+ba[language^=en]/bv*+ba/b"
+--ppa 'Merger+ffmpeg_o:-metadata:s:a:0 title="Original"'
+-S "res:1080,vcodec:avc,acodec:m4a,proto,vbr,abr"
+-t mkv
+
+# Clean & embed English automatic captions
+--write-auto-subs
+--sub-langs "en-orig"
+--sub-format "vtt"
+--use-postprocessor "CleanAutoSubs:when=before_dl"
+--ppa 'EmbedSubtitle+ffmpeg_o:-metadata:s:s:0 title="Cleaned Auto Captions" -disposition:s:0 default'
+--embed-subs
+
+# Optional defaults
+--embed-metadata
+--embed-chapters
+
+# Embed thumbnail
+--convert-thumbnails jpg
+--embed-thumbnail

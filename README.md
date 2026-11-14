@@ -73,7 +73,7 @@ Instead of typing long commands every time, you can save default options in a `c
 Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 
 ---
-Below is an example `config.txt` that downloads a 1080p H.264 video in an MKV container with English audio, invokes this plugin to clean and embed English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults. [change paths for local filesystem]
+Below is an example `config.txt` that downloads a 1080p H.264 video with English audio in an MKV container, calls this plugin to clean and embed English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults such as chapters and metadata. [change paths for local filesystem]
 
 ```ini
 # Creates an ongoing list of downloaded videos, prevents re-downloading

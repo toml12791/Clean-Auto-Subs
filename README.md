@@ -8,7 +8,9 @@ A yt-dlp plugin that cleans up YouTube's English auto-generated captions by remo
 > Clean-Auto-Subs works with captions YouTube has already generated. It does not transcribe audio, translate dialogue, or correct recognition mistakes.
 
 <div align="center">
+    
 https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
+
 </div>
 
 ## Highlights

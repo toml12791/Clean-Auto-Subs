@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 - **Readable structure:** Strips 'rolling subtitle' repetition and rebuilds cues using language/grammar heuristics.
 - **Accurate timing:** Captures inline WebVTT word timestamps before SRT conversion to preserve natural pacing.
-- **Clean dialogue:** Removes `[Music]`, `[Explosion]`, `[Laughing]` type clutter, keeps `[ __ ]` censorship markers, and formats `>>` turns as proper `- ` dialogue dashes.
+- **Clean dialogue:** Removes `[Music]`, `[Explosion]`, `[Laughing]` type clutter, keeps `[ __ ]` censorship markers, and formats YouTube's `>>` as proper `- ` dialogue dashes.
 - **Zero bloat:** Pure Python + FFmpeg. No Whisper, or extra dependencies.
 
 ## Requirements

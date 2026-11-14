@@ -27,8 +27,15 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
+## Quick Start
+
+1. Download **`Clean-Auto-Subs.zip`** below.
+2. Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
+3. Extract the contents of `Clean-Auto-Subs.zip` directly into that folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
+4. Open `config.txt` and update the `D:/YouTube` paths to match your preferred download folder.
+
 <details>
-<summary><h2>Quick Start</h2></summary>
+<summary><h2>Manual Installation</h2></summary>
 
 1. Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
 

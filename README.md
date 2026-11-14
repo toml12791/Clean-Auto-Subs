@@ -67,11 +67,11 @@ Instead of typing long commands every time, you can save default options in a `c
 Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 
 ---
-Below is an example `config.txt` that downloads a 1080p H.264 video with English audio in an MKV container, calls this plugin to clean and embed English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults such as chapters and metadata. [change paths for local filesystem]
+Below is an example `config.txt` that downloads a 1080p H.264 video with English audio in an MKV container, calls this plugin to clean and embed English automatic captions, labels the subtitle track and sets it as default, and includes optional quality-of-life defaults such as chapters and metadata *(update the `D:/YouTube` paths with your preferred download location)*.
 
 ```ini
 # Temporary location, destination & file naming preferences
-# (Replace "D:/YouTube" with your preferred download folder)
+# (Replace "D:/YouTube" with your preferred download location)
 -P "temp:."
 -P "home:D:/YouTube"
 -o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"

@@ -29,12 +29,12 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 ## Quick Start
 
-1. Download **[`Clean-Auto-Subs.zip`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/)** and copy it to your clipboard.
-2. Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
-3. Paste & Extract the contents of `Clean-Auto-Subs.zip` directly into that `yt-dlp` folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
-4. Open `config.txt` and update the `D:/YouTube` paths to match your preferred download location.
+- Download **[`Clean-Auto-Subs.zip`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/)** and copy it to your clipboard.
+- Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
+- Paste & Extract the contents of `Clean-Auto-Subs.zip` directly into that `yt-dlp` folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
+- Open `config.txt` and update the `D:/YouTube` paths to match your preferred download location.
 
-5. Once extracted, run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
+- Once extracted, run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
 
 ```sh
 yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"

@@ -27,7 +27,8 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
-## Quick start
+<details>
+<summary><h2>Quick Start</h2></summary>
 
 1. Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
 
@@ -52,6 +53,8 @@ This downloads the video, with English automatic captions in WebVTT format. This
 Check the terminal output for a `CleanAutoSubs` version summary and a `Timing source:` line. Play the result and review the captions before processing a larger batch.
 
 Running `python Clean-Auto-Subs.py` does not process a subtitle file. This module is loaded and called by yt-dlp.
+
+</details>
 
 <details>
 <summary><h2>Usage options</h2></summary>

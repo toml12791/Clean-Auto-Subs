@@ -70,16 +70,18 @@ Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 Below is an example `config.txt` that downloads a 1080p H.264 video with English audio in an MKV container, calls this plugin to clean and embed English automatic captions, labels the subtitle track, and includes optional quality-of-life defaults such as chapters and metadata. [change paths for local filesystem]
 
 ```ini
+# Temporary location, destination & file naming preferences
+# (Replace "D:/YouTube" with your preferred download folder)
+-P "temp:."
+-P "home:D:/YouTube"
+-o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"
+
 # Creates an ongoing list of downloaded videos, prevents re-downloading
 --download-archive "D:/YouTube/download-archive.txt"
 
-# Temporary location, destination & file naming preferences
--P "temp:."
--P "home:D:/YouTube"
--o "%(channel)s/%(fulltitle)s.%(ext)s"
-
 # Language, format & container preferences
 -f "bv*+ba[language^=en]/bv*+ba/b"
+--ppa 'Merger+ffmpeg_o:-metadata:s:a:0 title="Original"'
 -S "res:1080,vcodec:avc,acodec:m4a,proto,vbr,abr"
 -t mkv
 
@@ -88,14 +90,16 @@ Below is an example `config.txt` that downloads a 1080p H.264 video with English
 --sub-langs "en-orig"
 --sub-format "vtt"
 --use-postprocessor "CleanAutoSubs:when=before_dl"
+--ppa 'EmbedSubtitle+ffmpeg_o:-metadata:s:s:0 title="Cleaned Auto Captions" -disposition:s:0 default'
 --embed-subs
---ppa 'EmbedSubtitle+ffmpeg_o:-metadata:s:s:0 title="Cleaned Auto Captions"'
 
-# Optional Defaults: embed video metadata, chapters, and thumbnail
---convert-thumbnails jpg
---embed-thumbnail
+# Optional defaults
 --embed-metadata
 --embed-chapters
+
+# Embed thumbnail
+--convert-thumbnails jpg
+--embed-thumbnail
 ```
 ---
 

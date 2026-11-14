@@ -15,10 +15,10 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 ## Highlights
 
-- **Readable structure:** Strips karaoke roll-up repetition and rebuilds cues using English grammar heuristics.
+- **Readable structure:** Strips 'rolling subtitle' repetition and rebuilds cues using language/grammar heuristics.
 - **Accurate timing:** Captures inline WebVTT word timestamps before SRT conversion to preserve natural pacing.
-- **Clean dialogue:** Removes `[Music]` clutter, keeps `[ __ ]` censorship markers, and formats `>>` turns as dashes.
-- **Zero bloat:** Pure Python + FFmpeg—no Whisper, LLMs, or extra dependencies.
+- **Clean dialogue:** Removes `[Music]`, `[Explosion]`, `[Laughing]` type clutter, keeps `[ __ ]` censorship markers, and formats `>>` turns as proper `- ` dialogue dashes.
+- **Zero bloat:** Pure Python + FFmpeg. No Whisper, or extra dependencies.
 
 ## Requirements
 

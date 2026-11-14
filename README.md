@@ -29,10 +29,10 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 ## Quick Start
 
-1. Download **`Clean-Auto-Subs.zip`** below.
+1. Download **[`Clean-Auto-Subs.zip`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/)** and copy it to your clipboard.
 2. Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
-3. Extract the contents of `Clean-Auto-Subs.zip` directly into that folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
-4. Open `config.txt` and update the `D:/YouTube` paths to match your preferred download folder.
+3. Paste & Extract the contents of `Clean-Auto-Subs.zip` directly into that `yt-dlp` folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
+4. Open `config.txt` and update the `D:/YouTube` paths to match your preferred download location.
 
 <details>
 <summary><h2>Manual Installation</h2></summary>

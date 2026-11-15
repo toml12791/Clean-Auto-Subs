@@ -29,7 +29,7 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 ## Quick Start - PowerShell Install
 
-If you don't have `yt-dlp` installed, you will need to start with installing it.
+If you don't have `yt-dlp` installed, you will need to start with installing it. Run this command in PowerShell to install with winget.
 
 ```sh
 winget install yt-dlp.yt-dlp

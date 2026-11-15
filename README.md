@@ -22,12 +22,18 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 ## Requirements
 
-- yt-dlp & FFmpeg installed (`winget install yt-dlp.yt-dlp` will install both) 
+- A working `yt-dlp` installation
 - English automatic captions available for the selected video
 
 If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
 ## Quick Start - PowerShell Install
+
+If you don't have `yt-dlp` installed, you will need to start with installing it.
+
+```sh
+winget install yt-dlp.yt-dlp
+```
 
 Run this single command in PowerShell to install or update the plugin (any existing `config.txt` is automatically backed up to `config.bak.txt`):
 

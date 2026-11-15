@@ -45,25 +45,11 @@ irm https://raw.githubusercontent.com/toml12791/Clean-Auto-Subs/main/install.ps1
 ```
 
 <details>
-<summary><h2>ZIP Install</h2></summary>
-
-- Download **[`Clean-Auto-Subs.zip`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/)** and copy it to your clipboard.
-- Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
-- Paste & Extract the contents of `Clean-Auto-Subs.zip` directly into that `yt-dlp` folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
-- Open `config.txt` and update the `~/Videos/YouTube` paths to match your preferred download location.
-
-- Once extracted, run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
-
-```sh
-yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
-```
-
-</details>
-
-<details>
 <summary><h2>Manual Install</h2></summary>
 
-- Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
+Install the plugin by placing `Clean-Auto-Subs.py` inside your `yt-dlp` plugin directory:
+
+### Standard Install (Windows)
 
 ```text
 %APPDATA%/
@@ -75,19 +61,31 @@ yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postproc
                     └── Clean-Auto-Subs.py
 ```
 
-- Run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
+### Standalone / Portable `yt-dlp.exe` Install
+
+```text
+<folder-containing-yt-dlp.exe>/
+└── yt-dlp-plugins/
+    └── cleanautosubs/
+        └── yt_dlp_plugins/
+            └── postprocessor/
+                └── Clean-Auto-Subs.py
+```
+
+Run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
 
 ```sh
 yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
 ```
 
-This downloads the video, with English automatic captions in WebVTT format. This plugin converts and cleans the selected subtitles track(s) to SRT.
+This downloads the video with English automatic captions in WebVTT format. This plugin converts and cleans the selected subtitle track(s) to SRT.
 
 Check the terminal output for a `CleanAutoSubs` version summary and a `Timing source:` line. Play the result and review the captions before processing a larger batch.
 
-Running `python Clean-Auto-Subs.py` does not process a subtitle file. This module is loaded and called by yt-dlp.
+Running `python Clean-Auto-Subs.py` does not process a subtitle file. This module is loaded and called by `yt-dlp`.
 
 </details>
+
 
 <details>
 <summary><h2>yt-dlp options and configuration</h2></summary>

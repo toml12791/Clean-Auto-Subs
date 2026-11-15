@@ -28,7 +28,7 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 ## Quick Start - PowerShell Install
 
-If you don't have `yt-dlp` or `ffmpeg` installed, run this command in PowerShell to install both with `winget`.
+- If you don't have `yt-dlp` or `ffmpeg` installed, run this command in PowerShell to install both with `winget`.
 
 _(`ffmpeg` is a dependency of `yt-dlp` and will also be downloaded)_
 
@@ -36,7 +36,7 @@ _(`ffmpeg` is a dependency of `yt-dlp` and will also be downloaded)_
 winget install yt-dlp.yt-dlp
 ```
 
-Run this command in PowerShell to install or update the plugin with the supplied **[`install.ps1`](https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1)** script.
+- Run this command in PowerShell to install or update the plugin with the supplied **[`install.ps1`](https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1)** script.
 
 _(any existing `config.txt` is automatically backed up to `config.bak.txt`)_
 

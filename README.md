@@ -22,16 +22,16 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 ## Requirements
 
-- `yt-dlp` and `FFmpeg` installed and available in your PATH
+- `yt-dlp` and `ffmpeg` installed and available in your PATH
 - English automatic captions available for the selected video
 
 If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
 
 ## Quick Start - PowerShell Install
 
-If you don't have `yt-dlp` or `FFmpeg` installed, run this command in PowerShell to install both with `winget`.
+If you don't have `yt-dlp` or `ffmpeg` installed, run this command in PowerShell to install both with `winget`.
 
-_( is a dependency of yt-dlp and will also be downloaded)_
+_(`ffmpeg` is a dependency of yt-dlp and will also be downloaded)_
 
 ```sh
 winget install yt-dlp.yt-dlp
@@ -156,7 +156,7 @@ See the [yt-dlp option reference](https://github.com) for additional configurati
 |---|---|
 | 1 | Identify selected automatic-caption tracks |
 | 2 | Capture available inline WebVTT timing before conversion |
-| 3 | Convert selected subtitle files to SRT through  |
+| 3 | Convert selected subtitle files to SRT with `ffmpeg` |
 | 4 | For English automatic captions, select usable VTT timing or the SRT fallback |
 | 5 | Remove rolling repetition and repair source overlaps |
 | 6 | Strip descriptive bracket annotations while preserving censorship markers |
@@ -269,9 +269,9 @@ Request VTT input and ensure no earlier postprocessor converts it before CleanAu
 
 Confirm cleanup runs before embedding. Use the `before_dl` setting shown in the examples and check that your player is displaying the intended track.
 
-###  conversion fails
+### SRT conversion fails
 
-Confirm  is available inside the environment running yt-dlp. For MeTube, that means inside the container. Review the preceding FFmpeg error for the specific cause.
+Confirm FFmpeg is available inside the environment running yt-dlp. Review the preceding FFmpeg error for the specific cause.
 
 ### Readability warnings remain
 

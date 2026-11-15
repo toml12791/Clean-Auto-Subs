@@ -35,7 +35,8 @@ Run this single command in PowerShell to install or update the plugin (any exist
 irm https://raw.githubusercontent.com/toml12791/Clean-Auto-Subs/main/install.ps1 | iex
 ```
 
-## ZIP Install
+<details>
+<summary><h2>ZIP Install</h2></summary>
 
 - Download **[`Clean-Auto-Subs.zip`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/)** and copy it to your clipboard.
 - Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
@@ -48,8 +49,10 @@ irm https://raw.githubusercontent.com/toml12791/Clean-Auto-Subs/main/install.ps1
 yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"
 ```
 
+</details>
+
 <details>
-<summary><h2>Manual Installation</h2></summary>
+<summary><h2>Manual Install</h2></summary>
 
 1. Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
 

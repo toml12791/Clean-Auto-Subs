@@ -29,13 +29,13 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 ## Quick Start - PowerShell Install
 
-If you don't have `yt-dlp` installed, you will need to start with installing it. Run this command in PowerShell to install with winget.
+If you don't have `yt-dlp` installed, run this command in PowerShell to install it with winget.
 
 ```sh
 winget install yt-dlp.yt-dlp
 ```
 
-Run this single command in PowerShell to install or update the plugin (any existing `config.txt` is automatically backed up to `config.bak.txt`):
+Run this command in PowerShell to install or update the plugin with the supplied `install.ps1` script (any existing `config.txt` is automatically backed up to `config.bak.txt`):
 
 ```powershell
 irm https://raw.githubusercontent.com/toml12791/Clean-Auto-Subs/main/install.ps1 | iex

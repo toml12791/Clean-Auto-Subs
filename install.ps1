@@ -71,7 +71,7 @@ if (Test-Path $configPath) {
 } else {
     Copy-Item -Path (Join-Path $tempExtract "config.txt") -Destination $configPath -Force
     Write-Host "Installed starter config.txt." -ForegroundColor Green
-    Write-Host "IMPORTANT: Open $configPath and update the 'D:/YouTube' paths to match your preferred folder." -ForegroundColor Yellow
+    Write-Host "Videos will download to ~/Videos/YouTube by default (edit $configPath to change it)." -ForegroundColor Yellow
 }
 
 Remove-Item -Path $tempZip -Force -ErrorAction SilentlyContinue

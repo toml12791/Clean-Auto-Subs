@@ -98,7 +98,7 @@ Below is an example `config.txt` that downloads a 1080p H.264 video with English
 
 ```ini
 # Temporary location, destination & file naming preferences
-# (Replace "D:/YouTube" with your preferred download location)
+# (Replace "~/Videos/YouTube" with your preferred download location)
 -P "temp:."
 -P "home:~/Videos/YouTube"
 -o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"

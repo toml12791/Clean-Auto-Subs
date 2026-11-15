@@ -104,7 +104,7 @@ Below is an example `config.txt` that downloads a 1080p H.264 video with English
 -o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"
 
 # Creates an ongoing list of downloaded videos, prevents re-downloading
---download-archive "~/Videos/YouTube"
+--download-archive "~/Videos/YouTube/download-archive.txt"
 
 # Language, format & container preferences
 -f "bv*+ba[language^=en]/bv*+ba/b"

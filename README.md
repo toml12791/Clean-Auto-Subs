@@ -41,7 +41,7 @@ irm https://raw.githubusercontent.com/toml12791/Clean-Auto-Subs/main/install.ps1
 - Download **[`Clean-Auto-Subs.zip`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/)** and copy it to your clipboard.
 - Press `Win + R`, type `%APPDATA%\yt-dlp`, and press **Enter** (create the `yt-dlp` folder if it doesn't exist yet).
 - Paste & Extract the contents of `Clean-Auto-Subs.zip` directly into that `yt-dlp` folder. *(If you already have a `config.txt`, back it up or merge the lines instead of overwriting it.)*
-- Open `config.txt` and update the `D:/YouTube` paths to match your preferred download location.
+- Open `config.txt` and update the `~/Videos/YouTube` paths to match your preferred download location.
 
 - Once extracted, run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
 
@@ -94,17 +94,17 @@ Instead of typing long commands every time, you can save default options in a `c
 Once saved, running `yt-dlp "VIDEO_URL"` automatically applies your settings.
 
 ---
-Below is an example `config.txt` that downloads a 1080p H.264 video with English audio in an MKV container, calls this plugin to clean and embed English automatic captions, labels the subtitle track and sets it as default, and includes optional quality-of-life defaults such as chapters and metadata *(update the `D:/YouTube` paths with your preferred download location)*.
+Below is an example `config.txt` that downloads a 1080p H.264 video with English audio in an MKV container, calls this plugin to clean and embed English automatic captions, labels the subtitle track and sets it as default, and includes optional quality-of-life defaults such as chapters and metadata *(update the `~/Videos/YouTube` paths with your preferred download location)*.
 
 ```ini
 # Temporary location, destination & file naming preferences
 # (Replace "D:/YouTube" with your preferred download location)
 -P "temp:."
--P "home:D:/YouTube"
+-P "home:~/Videos/YouTube"
 -o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"
 
 # Creates an ongoing list of downloaded videos, prevents re-downloading
---download-archive "D:/YouTube/download-archive.txt"
+--download-archive "~/Videos/YouTube"
 
 # Language, format & container preferences
 -f "bv*+ba[language^=en]/bv*+ba/b"

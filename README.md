@@ -35,7 +35,7 @@ If you don't have `yt-dlp` installed, run this command in PowerShell to install 
 winget install yt-dlp.yt-dlp
 ```
 
-Run this command in PowerShell to install or update the plugin with the supplied **[`install.ps1`](https://github.com/toml12791/Clean-Auto-Subs/releases/latest/](https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1)** script (any existing `config.txt` is automatically backed up to `config.bak.txt`):
+Run this command in PowerShell to install or update the plugin with the supplied **[`install.ps1`](https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1)** script (any existing `config.txt` is automatically backed up to `config.bak.txt`):
 
 https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1
 

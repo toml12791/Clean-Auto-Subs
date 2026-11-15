@@ -1,11 +1,11 @@
 # Temporary location, destination & file naming preferences
 # (Replace "D:/YouTube" with your preferred download folder)
 -P "temp:."
--P "home:D:/YouTube"
+-P "home:~/Videos/YouTube"
 -o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"
 
 # Creates an ongoing list of downloaded videos, prevents re-downloading
---download-archive "D:/YouTube/download-archive.txt"
+--download-archive "~/Videos/YouTube/download-archive.txt"
 
 # Language, format & container preferences
 -f "bv*+ba[language^=en]/bv*+ba/b"

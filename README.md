@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 ## Requirements
 
-- A working `yt-dlp` installation
+- `yt-dlp` and `FFmpeg` installed and available in your PATH
 - English automatic captions available for the selected video
 
 If running `yt-dlp` from source or `pip`, use a Python version supported by your yt-dlp release. See the [yt-dlp requirements](https://github.com/yt-dlp/yt-dlp#dependencies).
@@ -60,7 +60,7 @@ yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postproc
 <details>
 <summary><h2>Manual Install</h2></summary>
 
-1. Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
+- Install the plugin by placing `Clean-Auto-Subs.py` inside this folder structure...
 
 ```text
 %APPDATA%/
@@ -72,7 +72,7 @@ yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postproc
                     └── Clean-Auto-Subs.py
 ```
 
-2. Run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
+- Run a download test with this command, replacing `VIDEO_URL` with a YouTube video URL:
 
 ```sh
 yt-dlp --write-auto-subs --sub-langs "en-orig" --sub-format "vtt" --use-postprocessor "CleanAutoSubs:when=before_dl" "VIDEO_URL"

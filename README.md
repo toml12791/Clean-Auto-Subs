@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/b9c8fdcb-d312-4399-a033-060eaa64671a
 
 - **Readable structure:** Strips 'rolling subtitle' repetition and rebuilds cues using language/grammar heuristics.
 - **Accurate timing:** Captures inline WebVTT word timestamps before SRT conversion to preserve natural pacing.
-- **Clean dialogue:** Removes `[Music]`, `[Explosion]`, `[Laughing]` type clutter, keeps `[ __ ]` censorship markers, and formats YouTube's `>>` as proper `- ` dialogue dashes.
+- **Clean dialogue:** Removes non-speech information (`[Music]`, `[Explosion]`, `[Laughing]`), keeps `[ __ ]` censorship markers, and formats YouTube's `>>` as proper `- ` dialogue dashes.
 - **Zero bloat:** Pure Python + FFmpeg. No Whisper, or extra dependencies.
 
 ## Requirements
@@ -29,13 +29,17 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 ## Quick Start - PowerShell Install
 
-If you don't have `yt-dlp` installed, run this command in PowerShell to install it with winget.
+If you don't have `yt-dlp` or `FFmpeg` installed, run this command in PowerShell to install both with `winget`.
+
+_( is a dependency of yt-dlp and will also be downloaded)_
 
 ```sh
 winget install yt-dlp.yt-dlp
 ```
 
-Run this command in PowerShell to install or update the plugin with the supplied **[`install.ps1`](https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1)** script _(any existing `config.txt` is automatically backed up to `config.bak.txt`)_:
+Run this command in PowerShell to install or update the plugin with the supplied **[`install.ps1`](https://github.com/toml12791/Clean-Auto-Subs/blob/main/install.ps1)** script.
+
+_(any existing `config.txt` is automatically backed up to `config.bak.txt`)_
 
 ```powershell
 irm https://raw.githubusercontent.com/toml12791/Clean-Auto-Subs/main/install.ps1 | iex
@@ -114,7 +118,7 @@ Below is an example `config.txt` that downloads a 1080p H.264 video with English
 
 # Language, format & container preferences
 -f "bv*+ba[language^=en]/bv*+ba/b"
---ppa 'Merger+ffmpeg_o:-metadata:s:a:0 title="Original"'
+--ppa 'Merger+_o:-metadata:s:a:0 title="Original"'
 -S "res:1080,vcodec:avc,acodec:m4a,proto,vbr,abr"
 -t mkv
 
@@ -123,7 +127,7 @@ Below is an example `config.txt` that downloads a 1080p H.264 video with English
 --sub-langs "en-orig"
 --sub-format "vtt"
 --use-postprocessor "CleanAutoSubs:when=before_dl"
---ppa 'EmbedSubtitle+ffmpeg_o:-metadata:s:s:0 title="Cleaned Auto Captions" -disposition:s:0 default'
+--ppa 'EmbedSubtitle+_o:-metadata:s:s:0 title="Cleaned Auto Captions" -disposition:s:0 default'
 --embed-subs
 
 # Optional defaults
@@ -152,7 +156,7 @@ See the [yt-dlp option reference](https://github.com) for additional configurati
 |---|---|
 | 1 | Identify selected automatic-caption tracks |
 | 2 | Capture available inline WebVTT timing before conversion |
-| 3 | Convert selected subtitle files to SRT through FFmpeg |
+| 3 | Convert selected subtitle files to SRT through  |
 | 4 | For English automatic captions, select usable VTT timing or the SRT fallback |
 | 5 | Remove rolling repetition and repair source overlaps |
 | 6 | Strip descriptive bracket annotations while preserving censorship markers |
@@ -265,9 +269,9 @@ Request VTT input and ensure no earlier postprocessor converts it before CleanAu
 
 Confirm cleanup runs before embedding. Use the `before_dl` setting shown in the examples and check that your player is displaying the intended track.
 
-### FFmpeg conversion fails
+###  conversion fails
 
-Confirm FFmpeg is available inside the environment running yt-dlp. For MeTube, that means inside the container. Review the preceding FFmpeg error for the specific cause.
+Confirm  is available inside the environment running yt-dlp. For MeTube, that means inside the container. Review the preceding FFmpeg error for the specific cause.
 
 ### Readability warnings remain
 

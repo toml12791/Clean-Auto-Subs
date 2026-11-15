@@ -1,5 +1,14 @@
 $ErrorActionPreference = "Stop"
 
+# 1. Pre-flight check for yt-dlp
+if (-not (Get-Command yt-dlp -ErrorAction SilentlyContinue)) {
+    Write-Host "yt-dlp was not found in your PATH." -ForegroundColor Yellow
+    Write-Host "Install yt-dlp (along with FFmpeg and Deno) first by running:" -ForegroundColor Cyan
+    Write-Host "  winget install yt-dlp.yt-dlp" -ForegroundColor Green
+    Write-Host "`nAfter installing yt-dlp, open a new PowerShell window and re-run this installer." -ForegroundColor Yellow
+    return
+}
+
 $ytDlpDir = Join-Path $env:APPDATA "yt-dlp"
 $zipUrl = "https://github.com/toml12791/Clean-Auto-Subs/releases/latest/download/Clean-Auto-Subs.zip"
 $tempZip = Join-Path $env:TEMP "Clean-Auto-Subs.zip"
@@ -68,4 +77,10 @@ if (Test-Path $configPath) {
 Remove-Item -Path $tempZip -Force -ErrorAction SilentlyContinue
 Remove-Item -Path $tempExtract -Recurse -Force -ErrorAction SilentlyContinue
 
-Write-Host "`nDone! Run 'yt-dlp -v --version' to verify CleanAutoSubs is loaded." -ForegroundColor Cyan
+Write-Host "`nVerifying installation..." -ForegroundColor Cyan
+$debugOutput = (yt-dlp -v -s 2>&1 | Out-String)
+if ($debugOutput -match "CleanAutoSubs") {
+    Write-Host "Success! yt-dlp has detected and loaded CleanAutoSubs." -ForegroundColor Green
+} else {
+    Write-Host "Warning: yt-dlp ran, but CleanAutoSubs was not listed in loaded plugins. Check $ytDlpDir\plugins." -ForegroundColor Yellow
+}

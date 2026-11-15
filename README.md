@@ -31,7 +31,7 @@ If running `yt-dlp` from source or `pip`, use a Python version supported by your
 
 If you don't have `yt-dlp` or `ffmpeg` installed, run this command in PowerShell to install both with `winget`.
 
-_(`ffmpeg` is a dependency of yt-dlp and will also be downloaded)_
+_(`ffmpeg` is a dependency of `yt-dlp` and will also be downloaded)_
 
 ```sh
 winget install yt-dlp.yt-dlp

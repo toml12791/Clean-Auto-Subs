@@ -1,5 +1,5 @@
 # Temporary location, destination & file naming preferences
-# (Replace "D:/YouTube" with your preferred download folder)
+# (Replace "~/Videos/YouTube" with your preferred download folder)
 -P "temp:."
 -P "home:~/Videos/YouTube"
 -o "%(channel)s/[%(upload_date>%Y-%m-%d)s] %(fulltitle)s.%(ext)s"

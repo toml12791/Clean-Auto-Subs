@@ -3,7 +3,7 @@
 
 **Version 1.0.0 - Public beta**
 
-A yt-dlp plugin that cleans up YouTube's English auto-generated captions by removing rolling repetition, rebuilding subtitle cues, and improving line breaks using source timing.
+A yt-dlp plugin that completely re-works YouTube's English auto-generated captions by removing rolling repetition, rebuilding subtitle cues, and improving line breaks using source timing.
 
 > Clean-Auto-Subs works with captions YouTube has already generated. It does not transcribe audio, translate dialogue, or correct recognition mistakes.
 
